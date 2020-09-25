@@ -101,6 +101,10 @@ class Calculator {
       }
     }
   };
+
+  styleBtnOff(elem) {
+    elem.classList.toggle('btn-shadow-off');
+  }
 }
 
 const digits = document.querySelectorAll('.number'),
@@ -132,3 +136,8 @@ operators.forEach((operator) => {
 });
 
 decimal.addEventListener('click', () => calculator.addDecimal());
+
+btns.forEach((btn) => {
+  btn.addEventListener('mouseup', (e) => calculator.styleBtnOff(e.target));
+  btn.addEventListener('mousedown', (e) => calculator.styleBtnOff(e.target));
+});
