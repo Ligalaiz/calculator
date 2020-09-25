@@ -90,6 +90,17 @@ class Calculator {
       this.TempSign = sign;
     }
   };
+
+  addDecimal = () => {
+    if (this.TempFlag) {
+      this.currentOperand.value = '0.';
+      this.TempFlag = false;
+    } else {
+      if (this.currentOperand.value.indexOf('.') === -1) {
+        this.currentOperand.value = `${this.currentOperand.value}.`;
+      }
+    }
+  };
 }
 
 const digits = document.querySelectorAll('.number'),
@@ -119,3 +130,5 @@ operators.forEach((operator) => {
     calculator.calculation(e.target.textContent)
   );
 });
+
+decimal.addEventListener('click', () => calculator.addDecimal());
