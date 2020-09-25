@@ -27,6 +27,18 @@ class Calculator {
         : (this.currentOperand.value += num);
     }
   };
+
+  clear = (value) => {
+    if (value === 'ce') {
+      this.TempFlag = true;
+      this.currentOperand.value = 0;
+    } else if (value === 'c') {
+      this.TempDigit = 0;
+      this.currentOperand.value = 0;
+      this.TempFlag = false;
+      this.TempSign = '';
+    }
+  };
 }
 
 const digits = document.querySelectorAll('.number'),
@@ -42,5 +54,11 @@ const calculator = new Calculator(currentOperand);
 digits.forEach((digit) => {
   digit.addEventListener('click', (e) =>
     calculator.print(e.target.textContent)
+  );
+});
+
+clearBtns.forEach((clearBtn) => {
+  clearBtn.addEventListener('click', (e) =>
+    calculator.clear(e.target.textContent)
   );
 });
