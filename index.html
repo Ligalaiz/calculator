@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>calculator</title>
+  </head>
+
+  <body>
+    <main class="main">
+      <div class="calc">
+        <div class="calc-display">
+          <input
+            disabled
+            type="text"
+            id="display"
+            value="0"
+            name=""
+            placeholder="000000000000000000"
+            class="calc-display-input"
+          />
+        </div>
+        <div class="calc-buttons">
+          <table class="calc-table">
+            <tr class="calc-buttons-row">
+              <td>
+                <button
+                  type="button"
+                  class="clear-btn btn btn-hover-red"
+                  id="ce"
+                >ce</button>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="clear-btn btn btn-hover-red"
+                  id="c"
+                >c</button>
+              </td>
+              <td>
+                <button type="button" class="operator btn btn-hover-orange">/</button>
+              </td>
+              <td>
+                <button type="button" class="operator btn btn-hover-orange">*</button>
+              </td>
+            </tr>
+            <tr class="calc-buttons-row">
+              <td>
+                <button type="button" class="number btn-hover-green btn">7</button>
+              </td>
+              <td>
+                <button type="button" class="number btn-hover-green btn">8</button>
+              </td>
+              <td>
+                <button type="button" class="number btn-hover-green btn">9</button>
+              </td>
+              <td>
+                <button type="button" class="operator btn btn-hover-orange">-</button>
+              </td>
+            </tr>
+            <tr class="calc-buttons-row">
+              <td>
+                <button type="button" class="number btn-hover-green btn">4</button>
+              </td>
+              <td>
+                <button type="button" class="number btn-hover-green btn">5</button>
+              </td>
+              <td>
+                <button type="button" class="number btn-hover-green btn">6</button>
+              </td>
+              <td>
+                <button type="button" class="operator btn btn-hover-orange">+</button>
+              </td>
+            </tr>
+            <tr class="calc-buttons-row">
+              <td>
+                <button type="button" class="number btn-hover-green btn">1</button>
+              </td>
+              <td>
+                <button type="button" class="number btn-hover-green btn">2</button>
+              </td>
+              <td>
+                <button type="button" class="number btn-hover-green btn">3</button>
+              </td>
+              <td>
+                <button type="button" class="operator btn btn-hover-orange" id="sqrt">&radic;</button>
+              </td>
+            </tr>
+            <tr class="calc-buttons-row">
+              <td>
+                <button
+                  type="button"
+                  class="number btn-hover-green btn"
+                >0</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-hover-orange" id="decimal">.</button>
+              </td>
+              <td>
+                <button type="button" class="operator btn btn-hover-orange" id="exp">^</button>
+              </td>
+              <td>
+                <button type="button" class="operator btn btn-hover-orange" id="exp">+/-</button>
+              </td>
+            </tr>
+            <tr class="calc-buttons-row">
+              <td colspan="4">
+                <button
+                  type="button"
+                  class="btn btn-hover-orange operator"
+                  id="result"
+                >=</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="codepen__wrap">
+        <iframe class="codepen" scrolling="no" title="Calculator" src="https://codepen.io/ligalaiz/embed/wvGOBKQ?height=265&theme-id=light&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+          See the Pen <a href='https://codepen.io/ligalaiz/pen/wvGOBKQ'>Calculator</a> by Ligalaiz
+          (<a href='https://codepen.io/ligalaiz'>@ligalaiz</a>) on <a href='https://codepen.io'>CodePen</a>.
+        </iframe>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
