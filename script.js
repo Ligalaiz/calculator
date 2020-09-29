@@ -40,50 +40,56 @@ class Calculator {
     }
   };
 
-  calculation = (sign) => {
-    this.currentOperand.value =
-      this.currentOperand.value === 'invalid in'
-        ? 0
-        : this.currentOperand.value;
+  signChange = () => {
     let currentDigit = this.currentOperand.value;
+    this.currentOperand.value =
+      currentDigit > 0 ? -currentDigit : -currentDigit;
+  };
+
+  sqrt = () => {
+    let currentDigit = this.currentOperand.value;
+    if (currentDigit >= 0) {
+      this.TempDigit = Math.sqrt(+currentDigit);
+      this.currentOperand.value = this.TempDigit;
+    } else {
+      this.currentOperand.value = 'invalid in';
+    }
+  };
+
+  calculation = (sign) => {
+    if (this.currentOperand.value === 'invalid in')
+      this.currentOperand.value = 0;
+
+    let currentDigit = this.currentOperand.value;
+
     if (this.TempFlag && this.TempSign !== '=') {
       this.currentOperand.value = this.TempDigit;
-    } else if (sign === '^' || sign === '√' || sign === '+/-') {
-      switch (sign) {
-        case '^':
-          this.TempDigit = parseInt((+currentDigit) ** 2 * 100) / 100;
-          this.currentOperand.value = this.TempDigit;
-          break;
-        case '√':
-          if (this.TempDigit >= 0) {
-            this.TempDigit = Math.sqrt(+currentDigit);
-            this.currentOperand.value = this.TempDigit;
-          } else {
-            this.currentOperand.value = 'invalid in';
-          }
-          break;
-        case '+/-':
-          this.TempDigit = -currentDigit;
-          this.currentOperand.value = this.TempDigit;
-          break;
-      }
     } else {
       this.TempFlag = true;
       switch (this.TempSign) {
         case '/':
-          this.TempDigit /= +currentDigit;
+          this.TempDigit =
+            (((this.TempDigit * 10) / parseFloat(currentDigit)) * 100) / 1000;
           break;
         case '*':
-          this.TempDigit *= +currentDigit;
+          this.TempDigit =
+            (this.TempDigit * 10 * parseFloat(currentDigit) * 100) / 1000;
           break;
         case '+':
-          this.TempDigit = (this.TempDigit * 100 + +currentDigit * 100) / 100;
+          this.TempDigit =
+            (this.TempDigit * 100 + parseFloat(currentDigit) * 100) / 100;
           break;
         case '-':
-          this.TempDigit = (this.TempDigit * 100 - +currentDigit * 100) / 100;
+          this.TempDigit =
+            (this.TempDigit * 100 - parseFloat(currentDigit) * 100) / 100;
+          break;
+        case '^':
+          this.TempDigit =
+            parseFloat(this.TempDigit ** parseFloat(currentDigit) * 100000) /
+            100000;
           break;
         default:
-          this.TempDigit = +currentDigit;
+          this.TempDigit = parseFloat(currentDigit);
           break;
       }
       this.currentOperand.value = this.TempDigit;
@@ -113,7 +119,8 @@ const digits = document.querySelectorAll('.number'),
   btns = document.querySelectorAll('.btn'),
   currentOperand = document.getElementById('display'),
   exp = document.getElementById('exp'),
-  sqrt = document.getElementById('sqrt');
+  sqrt = document.getElementById('sqrt'),
+  minus = document.getElementById('minus');
 
 const calculator = new Calculator(currentOperand);
 
@@ -141,3 +148,6 @@ btns.forEach((btn) => {
   btn.addEventListener('mouseup', (e) => calculator.styleBtnOff(e.target));
   btn.addEventListener('mousedown', (e) => calculator.styleBtnOff(e.target));
 });
+
+minus.addEventListener('click', () => calculator.signChange());
+sqrt.addEventListener('click', () => calculator.sqrt());
