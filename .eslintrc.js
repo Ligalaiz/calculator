@@ -34,13 +34,18 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'jsx-a11y/label-has-associated-control': 'off',
     'prettier/prettier': [
       'error',
       {
         endOfLine: 'auto',
       },
     ],
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
     'no-restricted-globals': 'off',
+    'no-unused-vars': 'warn',
+    'react/no-unused-prop-types': 'warn',
     'react/no-array-index-key': 0,
     'react/prop-types': 0,
     'react/destructuring-assignment': [0],
@@ -49,6 +54,7 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     'no-use-before-define': 'off',
+    '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/no-use-before-define': ['error'],
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
