@@ -11,6 +11,10 @@ export const divide = (a: number, b: number): number => {
   return Number((a / b).toFixed(2));
 };
 
+export const exp = (a: number, b: number): number => {
+  return Number((a ** b).toFixed(2));
+};
+
 interface ISign {
   [key: string]: (a: number, b: number) => number;
 }
@@ -24,6 +28,7 @@ export const signMap: ISign = {
   '-': subtract,
   '/': divide,
   '*': multiply,
+  '**': exp,
 };
 
 export const [FIRST, SECOND] = [1, 2];
@@ -33,6 +38,7 @@ export const prioritiesMap: IPriorities = {
   '-': SECOND,
   '/': FIRST,
   '*': FIRST,
+  '**': FIRST,
 };
 
 export type ParsedLineType = (number | string)[];
