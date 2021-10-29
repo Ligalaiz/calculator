@@ -4,3 +4,6 @@ build/*.js
 dist
 src/assets/animations
 coverage
+.history
+src/stories
+storybook-static

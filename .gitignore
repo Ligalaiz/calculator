@@ -23,3 +23,6 @@ dist
 
 coverage
 .husky
+.history
+storybook-static
+src/stories
