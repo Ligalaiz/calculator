@@ -4,6 +4,7 @@ import {
   multiply,
   divide,
   exp,
+  factorial,
 } from '../../../src/utils/calculation';
 
 describe('Check sum function', () => {
@@ -81,5 +82,20 @@ describe('Check exp function', () => {
   });
   test('2 ** 2 => 4', () => {
     expect(exp(-3, 2)).toBe(9);
+  });
+});
+
+describe('Check factorial function', () => {
+  test('5! => 120', () => {
+    expect(factorial(5)).toBe(120);
+  });
+  test('0! => 1', () => {
+    expect(factorial(0)).toBe(1);
+  });
+  test('1! => 1', () => {
+    expect(factorial(1)).toBe(1);
+  });
+  test('10! => 3628800', () => {
+    expect(factorial(10)).toBe(3628800);
   });
 });
