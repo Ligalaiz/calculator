@@ -3,6 +3,7 @@ import {
   subtract,
   multiply,
   divide,
+  exp,
 } from '../../../src/utils/calculation';
 
 describe('Check sum function', () => {
@@ -68,5 +69,17 @@ describe('Check divide function', () => {
   });
   test('0.5 / 0.3 = 1.67', () => {
     expect(divide(0.5, 0.3)).toBe(1.67);
+  });
+});
+
+describe('Check exp function', () => {
+  test('2 ** 2 => 4', () => {
+    expect(exp(2, 2)).toBe(4);
+  });
+  test('0.2 ** 0.2 => 0.72', () => {
+    expect(exp(0.2, 0.2)).toBe(0.72);
+  });
+  test('2 ** 2 => 4', () => {
+    expect(exp(-3, 2)).toBe(9);
   });
 });
