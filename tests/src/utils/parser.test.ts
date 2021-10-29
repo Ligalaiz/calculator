@@ -12,4 +12,7 @@ describe('Check parser function', () => {
   test("1 + 2 - 3 * 4 / 5 => [1, '+', 2, '-', 3, '*', 4, '/', 5]", () => {
     expect(parser('1 + 2 - 3 * 4 / 5')).toEqual(result);
   });
+  test("3 * 4 / 5 => ['3!', '*', '4!', '/', '5!']", () => {
+    expect(parser('3! * 4! / 5!')).toEqual(['3!', '*', '4!', '/', '5!']);
+  });
 });
