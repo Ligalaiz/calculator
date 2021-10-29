@@ -7,6 +7,8 @@ const parser = (str: string): ParsedLineType => {
   const result = stack.reduce<ParsedLineType>((acc, cur) => {
     if (isNumber(cur)) {
       acc.push(Number(cur));
+    } else if (cur.match(/^\d+!$/g)) {
+      acc.push(cur);
     } else if (!isNumber(cur) && prioritiesMap.hasOwnProperty(cur)) {
       acc.push(cur);
     } else {

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export const sum = (a: number, b: number): number => {
   return (a * 100 + b * 100) / 100;
 };
@@ -15,6 +16,15 @@ export const exp = (a: number, b: number): number => {
   return Number((a ** b).toFixed(2));
 };
 
+export const factorial = (a: number): number => {
+  if (a === 0 || a === 1) return 1;
+  const result = Array(a)
+    .fill(null)
+    .map((item, ind) => ind + 1)
+    .reduce((acc, cur) => acc * cur);
+  return Number(result.toFixed(2));
+};
+
 interface ISign {
   [key: string]: (a: number, b: number) => number;
 }
@@ -29,6 +39,7 @@ export const signMap: ISign = {
   '/': divide,
   '*': multiply,
   '**': exp,
+  '!': factorial,
 };
 
 export const [FIRST, SECOND] = [1, 2];
@@ -39,6 +50,7 @@ export const prioritiesMap: IPriorities = {
   '/': FIRST,
   '*': FIRST,
   '**': FIRST,
+  '!': FIRST,
 };
 
 export type ParsedLineType = (number | string)[];
