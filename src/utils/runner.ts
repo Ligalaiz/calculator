@@ -17,4 +17,4 @@ const runner = (str: string): number => {
   return secondPriorities(firstPrioritiesRes);
 };
 
-export default runner;
+module.exports = runner;
