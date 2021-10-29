@@ -5,10 +5,15 @@ import {
   ParsedLineType,
   prioritiesMap,
   signMap,
+  factorial,
 } from './calculation';
 
 export const firstPriorities = (stack: ParsedLineType): ParsedLineType =>
   stack.reduce<ParsedLineType>((acc, secondParam) => {
+    if (typeof secondParam === 'string' && secondParam.match(/^\d+!$/g)) {
+      secondParam = factorial(parseFloat(secondParam));
+    }
+
     const firstParam = acc[acc.length - 2];
     const currentSign = acc[acc.length - 1];
 
