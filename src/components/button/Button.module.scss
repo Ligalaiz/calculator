@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+
+.btn {
+  width: 85px;
+  height: 60px;
+  padding: 5px 15px;
+  margin: 10px;
+  border: 0;
+  border-radius: 4px;
+
+  color: $grey-color;
+  font-size: 27px;
+  text-transform: uppercase;
+  outline: 0;
+
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: $grey-color--light;
+  box-shadow: 0 14px 28px $black-color--light-X2,
+    0 10px 10px $black-color--light-X1;
+
+  &:hover {
+    background-color: $grey-color--dark-X2;
+  }
+}
+
+.btn-shadow-off {
+  box-shadow: none;
+}
