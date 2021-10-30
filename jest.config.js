@@ -3,9 +3,9 @@ module.exports = {
   coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['<rootDir>/dist/'],
-  moduleFileExtensions: ['ts', 'js', 'json', 'node'],
+  moduleFileExtensions: ['ts', 'js', 'tsx', 'jsx', 'json', 'node'],
   collectCoverageFrom: [
-    'src/**/*.jsx',
+    'src/**/*.tsx',
     '!**/node_modules/**',
     '!src/utils/index.jsx',
     '!src/store/rootReducer.jsx',

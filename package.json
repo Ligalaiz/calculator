@@ -100,7 +100,7 @@
     "jest": "^27.0.6",
     "jest-localstorage-mock": "^2.4.17",
     "lint-staged": "^11.2.3",
-    "mini-css-extract-plugin": "^2.1.0",
+    "mini-css-extract-plugin": "^2.4.3",
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.1.1",

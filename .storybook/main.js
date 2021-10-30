@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const custom = require('../webpack.dev');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   core: {
@@ -23,11 +25,17 @@ module.exports = {
     },
   ],
   webpackFinal: async (config) => {
-    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    config.plugins.push(
+      new webpack.HotModuleReplacementPlugin(),
+      new MiniCssExtractPlugin({
+        filename: 'styles/[name].[contenthash:10].css',
+        chunkFilename: '[name].[contenthash:10].css',
+      }),
+    );
 
     config.resolve.modules = [
       ...(config.resolve.modules || []),
-      path.resolve(__dirname, "../src"),
+      path.resolve(__dirname, '../src'),
     ];
 
     config.module.rules.push({
@@ -41,6 +49,12 @@ module.exports = {
       enforce: 'pre',
     });
 
-    return config;
+    return {
+      ...config,
+      module: {
+        ...config.module,
+        rules: [...config.module.rules, ...custom.module.rules],
+      },
+    };
   },
 };
