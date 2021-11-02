@@ -1,25 +1,20 @@
-import React, { HTMLAttributes } from 'react';
-import cn from './Button.module.scss';
+/* eslint-disable import/no-unresolved */
+import React from 'react';
+import cn from 'classnames';
+import { PropsButton } from '../../interfaces';
+import cl from './Button.module.scss';
 
-export interface Props extends HTMLAttributes<HTMLButtonElement> {
-  /**
-   * Button contents
-   */
-  sign?: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
-}
+export const Button = ({ sign, variant, ...props }: PropsButton) => {
+  const btnClassName = cn(cl.btn, {
+    [`${cl.operator}`]: variant === 'operator',
+    [`${cl.primary}`]: variant === 'primary',
+  });
 
-const Button = ({ sign = '7', ...props }: Props) => {
   return (
     <div>
-      <button className={cn.btn} type="button" {...props}>
+      <button className={btnClassName} type="button" {...props}>
         {sign}
       </button>
     </div>
   );
 };
-
-export default Button;
