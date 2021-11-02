@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+@import '../../styles/global.scss';
+
+@font-face {
+  font-family: 'digital7_mono';
+  src: url('../../assets/fonts/digital7_mono.woff2') format('woff2'),
+    url('../../assets/fonts/digital7_mono.svg#digital7_mono') format('svg');
+}
+
+.display {
+  min-width: 320px;
+  width: 100%;
+  height: 60px;
+  border-radius: 6px;
+
+  color: $green-color--light;
+  text-align: right;
+  font-size: 65px;
+  font-family: 'digital7_mono', 'Arila', sans-serif;
+
+  background-color: $black-color;
+  box-shadow: 0 14px 28px $black-color--light-X2,
+    0 10px 10px $black-color--light-X1;
+}
+.display__wrapper {
+  margin: 0 auto;
+  padding: 20px;
+}
