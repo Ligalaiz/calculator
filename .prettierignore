@@ -3,4 +3,3 @@ node_modules
 dist
 .history
 storybook-static
-src/stories
