@@ -1,15 +1,16 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
-import cn from 'classnames';
-import cl from './Display.module.scss';
-import { IDisplay } from '../../interfaces';
+import { IDisplay } from 'src/interfaces';
+import { DisplayStyles, DisplayWrapperStyles } from './DisplayStyles';
 
 export const Display = ({ calculateStr, handleChange }: IDisplay) => {
   return (
-    <div className={cn(cl.display__wrapper)}>
+    <div className="display__wrapper" css={DisplayWrapperStyles}>
       <input
         type="text"
         value={calculateStr}
-        className={cn('display', cl.display)}
+        className="display"
+        css={DisplayStyles}
         onChange={handleChange}
         placeholder="0"
         data-testid="display"

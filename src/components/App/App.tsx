@@ -1,11 +1,13 @@
-import React, { FC, useState, ChangeEvent } from 'react';
-import runner from '../../utils/runner';
-import { Button } from '../button';
-import { Display } from '../display';
-import { NumberTable } from '../numberTable';
-import { OperatorsTable } from '../operatorsTable';
+/** @jsxImportSource @emotion/react */
+import { Display } from 'components/Display';
+import { NumberTable } from 'components/NumberTable';
+import { OperatorsTable } from 'components/OperatorsTable';
+import React, { ChangeEvent, FC, useState } from 'react';
+import { Button } from 'shared/Button';
+import { runner } from 'utils/runner';
+import { CalculatorWrapper, TableWrapper } from './AppStylex';
 
-const App: FC = () => {
+export const App: FC = () => {
   const [calculateStr, setCalculateStr] = useState<string>('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -18,9 +20,9 @@ const App: FC = () => {
   };
 
   return (
-    <>
+    <div className="calculator__wrapper" css={CalculatorWrapper}>
       <Display calculateStr={calculateStr} handleChange={handleChange} />
-      <div className="table__wrapper">
+      <div className="table__wrapper" css={TableWrapper}>
         <NumberTable
           setCalculateStr={setCalculateStr}
           calculateStr={calculateStr}
@@ -37,8 +39,6 @@ const App: FC = () => {
         onClick={handleClick}
         data-testid="Calculate"
       />
-    </>
+    </div>
   );
 };
-
-export default App;

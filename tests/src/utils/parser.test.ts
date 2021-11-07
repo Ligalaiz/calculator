@@ -1,4 +1,4 @@
-import parser from '../../../src/utils/parser';
+import { parser } from '../../../src/utils/parser';
 
 describe('Check parser function', () => {
   const result = [1, '+', 2, '-', 3, '*', 4, '/', 5];

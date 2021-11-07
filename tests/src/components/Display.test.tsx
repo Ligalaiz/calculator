@@ -1,7 +1,7 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import App from '../../../src/components/App';
+import { render } from '@testing-library/react';
+import React from 'react';
+import { App } from '../../../src/components/App/App';
 
 describe('Check renders btn', () => {
   test('renders Display', () => {

@@ -1,8 +1,8 @@
 /* eslint-disable no-prototype-builtins */
-import { prioritiesMap, ParsedLineType } from './calculation';
 import { isNumber } from './helpers';
+import { ParsedLineType, prioritiesMap } from './calculation';
 
-const parser = (str: string): ParsedLineType => {
+export const parser = (str: string): ParsedLineType => {
   const stack = str.split(' ');
   const result = stack.reduce<ParsedLineType>((acc, cur) => {
     if (isNumber(cur)) {
@@ -18,5 +18,3 @@ const parser = (str: string): ParsedLineType => {
   }, []);
   return result;
 };
-
-export default parser;

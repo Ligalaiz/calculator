@@ -1,7 +1,8 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
-import { Button } from '../button';
-import cl from './OperatorsTable.module.scss';
-import { INumberTable } from '../../interfaces';
+import { Button } from 'shared/Button';
+import { INumberTable } from 'src/interfaces';
+import { OperationTableStyles } from './OperationTableStyles';
 
 export const OperatorsTable = ({
   setCalculateStr,
@@ -20,7 +21,7 @@ export const OperatorsTable = ({
   };
 
   return (
-    <div className={cl.numberWrap}>
+    <div className="numberWrap" css={OperationTableStyles}>
       {['+', '-', '/', '*', '**', '!'].map((item) => (
         <Button
           sign={item}

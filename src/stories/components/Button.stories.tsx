@@ -1,8 +1,8 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Button } from '../../components/button';
-import { PropsButton } from '../../interfaces';
+import { Meta, Story } from '@storybook/react';
+import React from 'react';
+import { Button } from '../../components/shared/Button';
+import { PropsButton } from '../../interfaces/interfaces';
 
 const meta: Meta = {
   title: 'Button',

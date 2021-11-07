@@ -1,8 +1,8 @@
-import React from 'react';
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
-import App from '../../../src/components/App';
+import React from 'react';
+import { App } from '../../../src/components/App/App';
 
 describe('Check renders btn', () => {
   test('renders Calculate btn', () => {

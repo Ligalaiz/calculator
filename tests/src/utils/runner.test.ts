@@ -1,4 +1,4 @@
-import runner from '../../../src/utils/runner';
+import { runner } from '../../../src/utils/runner';
 
 describe('Check runner function', () => {
   test('2 + 3 * 4 / 5 - 1 => 3.4', () => {

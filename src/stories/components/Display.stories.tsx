@@ -1,7 +1,7 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Display } from '../../components/display';
+import { Meta, Story } from '@storybook/react';
+import React from 'react';
+import { Display } from '../../components/Display';
 import { PropsDisplay } from '../../interfaces';
 
 const meta: Meta = {

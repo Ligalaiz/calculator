@@ -1,7 +1,9 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
-import { Button } from '../button';
-import cl from './NumberTable.module.scss';
-import { INumberTable } from '../../interfaces';
+import { Button } from 'shared/Button';
+import { INumberTable } from 'src/interfaces';
+import { v4 as uuidv4 } from 'uuid';
+import { NumberTableStyles } from './NumberTableStyles';
 
 export const NumberTable = ({
   setCalculateStr,
@@ -15,13 +17,13 @@ export const NumberTable = ({
   };
 
   return (
-    <div className={cl.numberWrap}>
+    <div className="numberWrap" css={NumberTableStyles}>
       {Array(10)
         .fill(null)
         .map((_, idx) => (
           <Button
             sign={idx}
-            key={idx}
+            key={uuidv4()}
             variant="primary"
             data-testid={idx}
             onClick={handleClick}

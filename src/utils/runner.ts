@@ -1,7 +1,7 @@
-import parser from './parser';
 import { firstPriorities, secondPriorities } from './engine';
+import { parser } from './parser';
 
-const runner = (str: string): number => {
+export const runner = (str: string): number => {
   const stack = parser(str);
 
   if (stack === null) {
@@ -16,5 +16,3 @@ const runner = (str: string): number => {
 
   return secondPriorities(firstPrioritiesRes);
 };
-
-export default runner;
