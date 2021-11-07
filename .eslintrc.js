@@ -7,61 +7,30 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:@typescript-eslint/recommended',
-    'airbnb/hooks',
-    'plugin:react-hooks/recommended',
-    'plugin:react/recommended',
+    'eslint:recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jest/recommended',
     'airbnb',
-    'plugin:prettier/recommended',
     'prettier',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
+
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 2021,
-    requireConfigFile: false,
     sourceType: 'module',
   },
-  plugins: [
-    '@babel',
-    'prettier',
-    'react-hooks',
-    'import',
-    'react',
-    '@typescript-eslint',
-  ],
+  plugins: ['react', '@typescript-eslint', 'import', 'jest'],
   rules: {
-    'jsx-a11y/label-has-associated-control': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
-    'jsx-a11y/no-static-element-interactions': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off',
-    'no-param-reassign': 'off',
-    'no-restricted-globals': 'off',
-    'no-unused-vars': 'warn',
-    'react/no-unused-prop-types': 'warn',
-    'react/no-array-index-key': 0,
-    'react/prop-types': 0,
-    'react/destructuring-assignment': [0],
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'no-use-before-define': 'off',
-    '@typescript-eslint/ban-types': 'off',
-    '@typescript-eslint/no-var-requires': 0,
-    '@typescript-eslint/no-use-before-define': ['error'],
-    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
-    'no-console': 'off',
-    'import/prefer-default-export': 'off',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-unresolved': 'error',
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -70,22 +39,48 @@ module.exports = {
         jsx: 'never',
         ts: 'never',
         tsx: 'never',
-        scss: 'always',
-        png: 'always',
       },
     ],
+    '@emotion/jsx-import': 0,
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'ExportDefaultDeclaration',
+        message: 'Restricted default export, prefer named exports!',
+      },
+    ],
+    'no-console': [
+      'error',
+      {
+        allow: ['warn', 'error'],
+      },
+    ],
+    'import/prefer-default-export': 'off',
+    'no-duplicate-imports': ["error", { "includeExports": true }],
+    'no-use-before-define': 'off',
+    'no-param-reassign': 'off',
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-var-requires': 0,
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
     'react/jsx-props-no-spreading': 'off',
-    'func-names': 'off',
+    'react/prop-types': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/display-name': 0,
   },
   settings: {
-    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     react: {
       createClass: 'createReactClass', // Regex for Component Factory to use,
       // default to "createReactClass"
       pragma: 'React', // Pragma to use, default to "React"
-      fragment: 'Fragment', // Fragment to use (may be a property of <pragma>), default to "Fragment"
-      version: 'detect', // React version. "detect" automatically picks the version you have installed.
-      // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+      fragment: 'Fragment', // Fragment to use (may be a property of <pragma>),
+      //  default to "Fragment"
+      version: 'detect', // React version. "detect" automatically picks the
+      // version you have installed.
+      // You can also use `16.0`, `16.3`, etc, if you want to override the
+      // detected value.
       // default to latest and warns if missing
       // It will default to "detect" in the future
       flowVersion: '0.53', // Flow version
@@ -98,24 +93,38 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
       typescript: {
-        alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        alwaysTryTypes: true, // always try to resolve types under
+        // `<root>@types` directory even it
+        // doesn't contain any source code, like `@types/unist`
 
-        // Choose from one of the "project" configs below or omit to use <root>/tsconfig.json by default
+        // Choose from one of the "project" configs below or omit to use
+        // <root>/tsconfig.json by default
 
         // use <root>/path/to/folder/tsconfig.json
         project: './tsconfig.json',
       },
     },
     propWrapperFunctions: [
-      // The names of any function used to wrap propTypes, e.g. `forbidExtraProps`. If this isn't set, any propTypes wrapped in a function will be skipped.
+      // The names of any function used to wrap propTypes, e.g.
+      // `forbidExtraProps`. If this isn't set,
+      //  any propTypes wrapped in a function will be skipped.
       'forbidExtraProps',
       { property: 'freeze', object: 'Object' },
       { property: 'myFavoriteWrapper' },
     ],
     linkComponents: [
-      // Components used as alternatives to <a> for linking, eg. <Link to={ url } />
+      // Components used as alternatives to <a> for linking, eg.
+      // <Link to={ url } />
       'Hyperlink',
       { name: 'Link', linkAttribute: 'to' },
     ],
   },
+  overrides: [
+    {
+      files: ['*.stories.tsx'],
+      rules: {
+        'no-restricted-syntax': ['off'],
+      },
+    },
+  ],
 };

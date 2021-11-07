@@ -10,9 +10,11 @@ module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     {
-      name: "@storybook/addon-docs",
+      name: '@storybook/addon-docs',
       options: {
         configureJSX: true,
+        babelOptions: {},
+        sourceLoaderOptions: null,
       },
     },
     '@storybook/addon-links',
@@ -55,11 +57,36 @@ module.exports = {
       enforce: 'pre',
     });
 
+    // config.module.rules.push({
+    //   test: /\.tsx?$/,
+    //   include: path.resolve(__dirname, '../src'),
+    //   use: [
+    //     require.resolve('babel-loader'),
+    //     {
+    //       loader: require.resolve('react-docgen-typescript-loader'),
+    //       options: {
+    //         tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+    //       },
+    //     },
+    //   ],
+    // });
+
+    // config.module.rules.push({
+    //   test: /\.(stories|story)\.[tj]sx?$/,
+    //   loader: require.resolve('@storybook/source-loader'),
+    //   exclude: [/node_modules/],
+    //   enforce: 'pre',
+    // });
+
     return {
       ...config,
       module: {
         ...config.module,
         rules: [...config.module.rules, ...custom.module.rules],
+      },
+      resolve: {
+        ...config.resolve,
+        alias: { ...config.resolve.alias, ...custom.resolve.alias },
       },
     };
   },

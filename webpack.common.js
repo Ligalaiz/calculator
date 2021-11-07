@@ -52,10 +52,12 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@root': path.resolve(__dirname, 'src'),
+      src: path.resolve(__dirname, 'src'),
+      components: path.resolve(__dirname, 'src/components'),
+      shared: path.resolve(__dirname, 'src/components/shared'),
+      utils: path.resolve(__dirname, 'src/utils'),
     },
   },
 

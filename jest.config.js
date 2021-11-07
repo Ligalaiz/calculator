@@ -20,7 +20,10 @@ module.exports = {
   },
   moduleNameMapper: {
     // '^@components(.*)$': '<rootDir>/src/components$1',
-    '^@root(.*)$': '<rootDir>/src$1',
+    '^src(.*)$': '<rootDir>/src$1',
+    '^components(.*)$': '<rootDir>/src/components$1',
+    '^shared(.*)$': '<rootDir>/src/components/shared$1',
+    '^utils(.*)$': '<rootDir>/src/utils$1',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/tests/mocks/fileMock.js',
     '\\.(css|scss)$': '<rootDir>/tests/mocks/styleMock.js',
