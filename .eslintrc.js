@@ -56,7 +56,7 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
-    'no-duplicate-imports': ["error", { "includeExports": true }],
+    'no-duplicate-imports': ['error', { includeExports: true }],
     'no-use-before-define': 'off',
     'no-param-reassign': 'off',
     '@typescript-eslint/explicit-function-return-type': 0,
