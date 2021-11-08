@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { ChangeEventHandler, HTMLAttributes, MouseEvent } from 'react';
 
 export interface PropsButton extends HTMLAttributes<HTMLButtonElement> {
-   /**
+  /**
    * Emotion bug
    */
   css?: any;
