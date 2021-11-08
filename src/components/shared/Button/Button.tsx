@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { PropsButton } from '@src/interfaces';
+import { PropsButton } from '@src/interfaces/interfaces';
 import React, { FC, useState } from 'react';
 import { ButtonStyles } from './ButtonStyles';
 

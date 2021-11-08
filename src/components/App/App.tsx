@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { Display } from '@components/Display';
-import { NumberTable } from '@components/NumberTable';
-import { OperatorsTable } from '@components/OperatorsTable';
-import { Button } from '@shared/Button';
+import { Display } from '@components/Display/Display';
+import { NumberTable } from '@components/NumberTable/NumberTable';
+import { OperatorsTable } from '@components/OperatorsTable/OperatorsTable';
+import { Button } from '@shared/Button/Button';
 import { runner } from '@utils/runner';
 import React, { ChangeEvent, FC, useState } from 'react';
 import { CalculatorWrapper, TableWrapper } from './AppStylex';
