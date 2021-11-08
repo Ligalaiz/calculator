@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
+import { Button } from '@shared/Button';
+import { INumberTable } from '@src/interfaces';
 import React from 'react';
-import { Button } from 'shared/Button';
-import { INumberTable } from 'src/interfaces';
 import { OperationTableStyles } from './OperationTableStyles';
 
 export const OperatorsTable = ({

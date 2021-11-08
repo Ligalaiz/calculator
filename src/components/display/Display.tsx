@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
+import { IDisplay } from '@src/interfaces';
 import React from 'react';
-import { IDisplay } from 'src/interfaces';
 import { DisplayStyles, DisplayWrapperStyles } from './DisplayStyles';
 
 export const Display = ({ calculateStr, handleChange }: IDisplay) => {

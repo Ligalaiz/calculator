@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { color } from 'src/styles';
+import { color } from '@src/styles';
 
 export const DisplayStyles = css`
   min-width: 320px;

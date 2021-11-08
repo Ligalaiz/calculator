@@ -1,8 +1,8 @@
+import { App } from '@components/App';
 import { Global } from '@emotion/react';
-import { App } from 'components/App';
+import { globalStyle } from '@src/styles';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { globalStyle } from 'src/styles';
 
 ReactDOM.render(
   <>

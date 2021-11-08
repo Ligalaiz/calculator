@@ -1,7 +1,8 @@
+/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { IButtonStyles } from 'src/interfaces';
-import { color } from 'src/styles';
+import { IButtonStyles } from '@src/interfaces';
+import { color } from '@src/styles';
 
 const BaseButtonStyle = css`
   min-width: 85px;

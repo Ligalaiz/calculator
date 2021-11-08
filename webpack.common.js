@@ -54,10 +54,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      src: path.resolve(__dirname, 'src'),
-      components: path.resolve(__dirname, 'src/components'),
-      shared: path.resolve(__dirname, 'src/components/shared'),
-      utils: path.resolve(__dirname, 'src/utils'),
+      '@src': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@shared': path.resolve(__dirname, 'src/components/shared'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
 
@@ -65,7 +65,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: path.join('./src', 'index.html'),
-      filename: 'index.html',
+      filename: './index.html',
       inject: true,
     }),
 

@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import { Display } from 'components/Display';
-import { NumberTable } from 'components/NumberTable';
-import { OperatorsTable } from 'components/OperatorsTable';
+import { Display } from '@components/Display';
+import { NumberTable } from '@components/NumberTable';
+import { OperatorsTable } from '@components/OperatorsTable';
+import { Button } from '@shared/Button';
+import { runner } from '@utils/runner';
 import React, { ChangeEvent, FC, useState } from 'react';
-import { Button } from 'shared/Button';
-import { runner } from 'utils/runner';
 import { CalculatorWrapper, TableWrapper } from './AppStylex';
 
 export const App: FC = () => {

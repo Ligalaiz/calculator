@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
+import { PropsButton } from '@src/interfaces';
 import React, { FC, useState } from 'react';
-import { PropsButton } from 'src/interfaces';
 import { ButtonStyles } from './ButtonStyles';
 
 export const Button: FC<PropsButton> = ({ sign, variant, ...props }) => {

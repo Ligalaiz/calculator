@@ -2,6 +2,10 @@
 import { ChangeEventHandler, HTMLAttributes, MouseEvent } from 'react';
 
 export interface PropsButton extends HTMLAttributes<HTMLButtonElement> {
+   /**
+   * Emotion bug
+   */
+  css?: any;
   /**
    * Button contents
    */
