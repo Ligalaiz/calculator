@@ -1,3 +1,3 @@
 # Calculator
 
-Link: [calculator](http://)
+Link: [calculator](https://ligalaiz-calculator.netlify.app/)
