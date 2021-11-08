@@ -47,11 +47,11 @@ module.exports = merge(common, {
       filename: 'styles/[name].[contenthash:10].css',
       chunkFilename: '[name].[contenthash:10].css',
     }),
-    // new ESLintPlugin({
-    //   extensions: ['js', 'jsx', '.ts', '.tsx'],
-    //   fix: false,
-    //   failOnError: true,
-    // }),
+    new ESLintPlugin({
+      extensions: ['js', 'jsx', '.ts', '.tsx'],
+      fix: false,
+      failOnError: true,
+    }),
     new ImageMinimizerPlugin({
       minimizerOptions: {
         plugins: [
